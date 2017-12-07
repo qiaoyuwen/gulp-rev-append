@@ -52,7 +52,7 @@ var revPlugin = function revPlugin() {
             try {
               data = fs.readFileSync(dependencyPath);
               hash = crypto.createHash('md5');
-              hash.update(data.toString(), 'utf8');
+              hash.update(data, 'utf8');
               line = line.replace(groups[2], hash.digest('hex'));
             }
             catch(e) {
